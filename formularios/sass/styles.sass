@@ -1,0 +1,142 @@
+@use 'variables'
+@use 'mixins'
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: Open Sans
+    
+body
+    @include mixins.flex-container-column
+    min-height: 100vh
+    gap: 1rem
+    background-color: variables.$primary-color
+    color: #fff
+
+.header 
+    height: 25vh
+    background-image: url('../img/header_bg.png')
+    background-size: contain
+    background-repeat: no-repeat  
+    background-position: center
+    
+    &-nav
+        background-color: rgba(0, 0, 0, 0.7)
+        color: #fff
+        padding: 1rem 0
+    
+    &-menu
+        @include mixins.flex-container-row
+        @include mixins.nav-menu
+        width: 100%
+
+        @include mixins.for-tablet-landscape
+            padding: variables.$tablet-landscape-padding
+    
+        @include mixins.for-desktop
+            padding: variables.$desktop-padding
+
+.main
+    @include mixins.flex-container-row
+    justify-content: space-between
+    padding: 0 1rem
+
+    @include mixins.for-desktop
+        padding: variables.$desktop-padding
+
+    @include mixins.for-mobile-and-tablet-portrait
+        @include mixins.flex-container-column
+
+    &--text
+        @include mixins.flex-container-column
+        justify-content: center
+        align-items: center
+        padding: 0 1rem
+        width: 50%
+    
+        @include mixins.for-mobile-and-tablet-portrait
+            width: 100%
+ 
+    &-form
+        width: 50%
+        border-radius: 20px
+        border-top-right-radius: 20px
+        border-bottom-right-radius: 20px
+        padding: 1rem
+        color: #000
+        background-color: variables.$secondary-color
+
+        @include mixins.for-mobile-and-tablet-portrait
+            width: 100% 
+    
+        &--section
+            @include mixins.flex-container-column
+            gap: .5rem
+            margin-bottom: 1.5rem
+        
+        &--wrapper
+            @include mixins.flex-container-column
+
+            @include mixins.for-desktop
+                @include mixins.flex-container-row
+                align-items: center
+                gap: 1rem
+
+        &--submit
+            width: 120px
+            padding: .7rem 1rem
+            border: 0
+            border-radius: 5px
+            background-color: variables.$third-color
+
+            @include mixins.for-except-big-screens
+                width: 100%
+
+.footer
+    @include mixins.flex-container-row
+    align-items: center
+    justify-content: space-evenly
+    min-height: 25vh
+    color: #fff
+    padding: 0 1rem
+
+    @include mixins.for-mobile
+        @include mixins.flex-container-column
+
+    @include mixins.for-tablet-landscape
+        padding: variables.$tablet-landscape-padding
+    
+    @include mixins.for-desktop
+        padding: variables.$desktop-padding
+    
+    &-section
+        @include mixins.flex-container-row
+        justify-content: center
+        align-items: center
+        width: 50%
+
+        @include mixins.for-mobile
+            @include mixins.flex-container-column
+            width: 100%
+            margin-bottom: 1rem
+
+        &--logo
+            display: inline-block
+            max-width: 40%
+
+            @include mixins.for-tablet-landscape
+                max-width: 50%
+
+            @include mixins.for-desktop
+                max-width: 20%
+    
+    &-menu
+        width: 50%
+        height: 100%
+        @include mixins.flex-container-column
+        @include mixins.nav-menu
+        align-items: center
+
+        &--item
+            margin-bottom: 1rem

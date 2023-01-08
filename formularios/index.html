@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"class="form-control" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="static/img/favicon.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="static/css/normalize.css">
+    <!-- Bootstrap -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+        crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="static/css/styles.css">
+
+    <title>Imobiliária</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-nav">
+            <ul class="header-menu">
+                <li><a class="header-menu--link" href="#">Home</a></li>
+                <li><a class="header-menu--link" href="#">Imóveis</a></li>
+                <li><a class="header-menu--link" href="#">Contato</a></li>
+                <li><a class="header-menu--link" href="#">Sobre nós</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main">
+        <article class="main--text">    
+            <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                <image href="static/img/chat-svg.svg" height="200" width="200" />
+            </svg>
+                
+            <h1>Não encontrou o que procurava?</h1>
+            <h3>Preencha o formulário e logo te retornaremos o contato.</h3>
+        </article>
+
+        <form class="main-form" novalidate>
+            <section class="main-form--section">
+                <label class="form-label" for="nome-input">Nome</label>
+                <input class="form-control" id="nome-input" name="nome-input" type="text" required/>
+                <div id="nameValidation" class="invalid-feedback"><strong>Por favor, digite um nome válido.</strong></div>
+            </section>
+            
+            <section class="main-form--section">
+                <label class="form-label" for="email-input">Email</label>
+                <input class="form-control" id="email-input" name="email-input" type="email" required/>
+                <div id="emailHelp" class="form-text">exemplo: usuario@provedor.com</div>
+                <div id="emailValidation" class="invalid-feedback"><strong>Por favor, digite um email válido.</strong></div>
+            </section>
+            
+            <section class="main-form--section">
+                <label class="form-label" for="telefone-input">Telefone</label>
+                <input class="form-control" id="telefone-input" name="telefone-input" type="text" required/>
+                <div id="phoneHelp" class="form-text">Lembre-se de colocar o seu DDD.</div>
+                <div id="phoneValidation" class="invalid-feedback"><strong>Por favor, digite um telefone válido.</strong></div>
+            </section>
+
+            <section class="main-form--section">
+                <label class="form-label" for="dataNascimento-input">Data de Nascimento</label>
+                <input class="form-control" id="dataNascimento-input" name="dataNascimento-input" type="date" required/>
+                <div id="dataNascimentoValidation" class="invalid-feedback"><strong>Por favor, selecione uma data de nascimento válida.</strong></div>
+            </section>
+
+            <section class="main-form--section">
+                <label class="form-label" for="bairro-input">Bairro de Interesse</label>
+                <select class="form-select" id="bairro-input" name="bairro-input">
+                    <option selected>Escolha o melhor bairro para você</option>
+                </select>
+                <div id="bairroValidation" class="invalid-feedback"><strong>Por favor, selecione um bairro válido.</strong></div>
+            </section>
+
+            <div class="main-form--wrapper">
+                <section class="main-form--section">
+                    <label class="form-label" for="periodoContato-input">Período para contato</label>
+                    <select class="form-select" id="periodoContato-input" name="periodoContato-input">
+                        <option selected>Escolha o melhor período para você</option>
+                        <option value="1">Manhã</option>
+                        <option value="2">Tarde</option>
+                        <option value="3">Noite</option>
+                    </select>
+                    <div id="periodoContatoValidation" class="invalid-feedback"><strong>Por favor, selecione um período válido.</strong></div>
+                </section>
+
+                <section class="main-form--section">
+                    <label>Podemos te telefonar?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="aceitaChamada-input" value="1" id="contatoSim-input">
+                        <label class="form-check-label" for="contatoSim-input">Sim</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="aceitaChamada-input" value="0" id="contatoNao-input" checked>
+                        <label class="form-check-label" for="contatoNao-input">Não</label>
+                    </div>
+                    <div id="formaDeContatoValidation" class="invalid-feedback"><strong>Por favor, selecione uma forma de contato válida.</strong></div>
+                </section>   
+            </div>
+
+            <button class="main-form--submit" type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <section class="footer-section">
+            <img class="footer-section--logo" src="static/img/footer_logo.png" alt="simple logo with name of the company"/>
+        </section>
+        <ul class="footer-menu">
+            <li class="footer-menu--item"><a class="footer-menu--link" href="#">Home</a></li>
+            <li class="footer-menu--item"><a class="footer-menu--link" href="#">Imóveis</a></li>
+            <li class="footer-menu--item"><a class="footer-menu--link" href="#">Contato</a></li>
+            <li class="footer-menu--item"><a class="footer-menu--link" href="#">Sobre nós</a></li>
+        </ul>
+    </footer>
+
+    <script src="static/js/generateBairroSelect.js"></script>
+    <script src="static/js/validateForm.js"></script>
+    <!-- Bootstrap script bundle -->
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+        crossorigin="anonymous"
+    ></script>
+</body>
+</html>

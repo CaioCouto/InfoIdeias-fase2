@@ -1,0 +1,47 @@
+@use 'variables'
+
+@mixin flex-container-column
+    display: flex
+    flex-direction: column
+
+@mixin flex-container-row
+    display: flex
+    flex-direction: row
+
+@mixin nav-menu
+        list-style: none
+        justify-content: space-evenly
+        height: 100%
+        margin: 0
+        padding: 0
+
+        &--link
+            text-decoration: none
+            color: #fff
+
+            &:hover
+                color: variables.$third-color
+                padding-bottom: .15rem
+                border-bottom: 1px solid variables.$third-color
+                transition: .4s
+                
+
+@mixin for-mobile
+    @media (max-width: variables.$mobile-max-width)
+        @content
+
+@mixin for-mobile-and-tablet-portrait
+    @media (max-width: calc(variables.$tablet-landscape-min-width - 1px))
+        @content
+
+@mixin for-tablet-landscape
+    @media (min-width: variables.$tablet-landscape-min-width)
+        @content    
+
+@mixin for-except-big-screens
+    @media (max-width: calc(variables.$desktop-min-width - 1px))
+        @content
+
+@mixin for-desktop
+    @media (min-width: variables.$desktop-min-width)
+        @content        
